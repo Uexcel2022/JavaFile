@@ -1,6 +1,5 @@
 package RegularExpression;
 
-import java.util.ArrayList;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -11,10 +10,9 @@ public class ClassWork {
 		char[] toCharArray = word.toCharArray();
 		String string = "";
 		String add = "";
-		int i = 1;
 		int lenght = toCharArray.length;
 
-		for (; i < lenght; i++) {
+		for (int i =1; i < lenght; i++) {
 
 			if (toCharArray[i] == toCharArray[i - 1]) {
 				add = String.valueOf(toCharArray[i]);
@@ -34,9 +32,9 @@ public class ClassWork {
 
 		String[] wordArray = string.split(" ");
 		String filterWordArray = "";
-		for (int J = 0; J < wordArray.length; J++) {
-			if (!wordArray[J].isEmpty()) {
-				filterWordArray += wordArray[J];
+		for (int i = 0; i < wordArray.length; i++) {
+			if (!wordArray[i].isEmpty()) {
+				filterWordArray += wordArray[i];
 				filterWordArray += " ";
 			}
 
@@ -46,10 +44,13 @@ public class ClassWork {
 		System.out.println("\nBuilded string: " + filterWordArray + "\n");
 
 		String[] filteredWordArray = filterWordArray.split(" ");
-//		String[] filteredWordArray = {"bbbb*", "cc*", "ddd*", "eee*", "r*"};
+		
+//		String[] filteredWordArray = {"bbbb*", "cc*", "ddd*", "eee*", "r*"};   in regex form
+		
 		String controlString = "";
 
 		String regex = "";
+		
 		for (String n : filteredWordArray) {
 
 			if (!controlString.contains(n)) {
